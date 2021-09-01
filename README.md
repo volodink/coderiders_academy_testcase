@@ -2,37 +2,8 @@
 
 ### Руководство по запуску
 
-### Требования к системе: 
-- ОС Linux
-- Python 3.8+
+Для запуска заданий на языке
+- __Python__, выберите ветку [```dev-python```](https://github.com/volodink/coderiders_academy_testcase/tree/dev-python)
+- __Java__, выберите ветку [```dev-java```](https://github.com/volodink/coderiders_academy_testcase/tree/dev-java)
 
-
-### Задание 1. Сортировки, сортировочки
-```
-  cd task01
-  python3 -m venv venv
-  source venv/bin/activate
-  python3 task01.py
-  deactivate
-```
-
-### Зaдание 2. Базы данных
-```
-  cd task02
-  python3 -m venv venv
-  source venv/bin/activate
-  python3 task02.py
-  deactivate
-```
-
-### Зaдание 3. Лифты
-```
-  cd task03
-  python3 -m venv venv
-  source venv/bin/activate
-  python3 task03.py
-  deactivate
-```
-
-
-
+и следуйте инcтрукциям.
