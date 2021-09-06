@@ -1,16 +1,16 @@
 ## Входное задание на курс coderiders.academy
 
-## Руководство по запуску
-
 ---
 
-## 1. Запуск как ПО
+### Руководство по запуску
 
-### Требования к системе: 
+### 1. Запуск как ПО
+
+#### Требования к системе: 
 - ОС Linux
 - Python 3.8+
 
-### Задание 1. Сортировки, сортировочки
+#### Задание 1. Сортировки, сортировочки
 ```
   cd task01
   python3 -m venv venv
@@ -19,7 +19,7 @@
   deactivate
 ```
 
-### Зaдание 2. Базы данных
+#### Зaдание 2. Базы данных
 ```
   cd task02
   python3 -m venv venv
@@ -30,7 +30,7 @@
   deactivate
 ```
 
-### Зaдание 3. Лифты
+#### Зaдание 3. Лифты
 ```
   cd task03
   python3 -m venv venv
@@ -40,6 +40,6 @@
 ```
 ---
 
-## 2. Блокнот Google Colaboratory (Colab) (Jupyter notebook)
+### 2. Блокнот Google Colaboratory (Colab) (Jupyter notebook)
 
 Блокнот можно посмотреть по [этой ссылке](https://colab.research.google.com/drive/1MlQQA1SeHE6Z4uqhooKq0AJTqYnwP09B?usp=sharing).
