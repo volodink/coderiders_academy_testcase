@@ -119,10 +119,12 @@ def prepare_test_data_ponyorm(library):
     populate_database()    
 
 
-def query_data_ponyorm(query_string):
+def query_data_ponyorm():
 
     @orm.db_session
     def get_data():
-        return orm.select((b.name, p.name) for b in Book for p in Publisher if (b.year >= 2009 and b.year <= 2019) and (b.genre in ['tech', 'cyberpunk']) and p.id  == b.publisher_id.id)[:]
+        return orm.select((b.name, p.name) 
+        for b in Book for p in Publisher 
+        if (b.year >= 2009 and b.year <= 2018) and (b.genre in ['tech', 'cyberpunk']) and p.id  == b.publisher_id.id)[:]
     
     return get_data()

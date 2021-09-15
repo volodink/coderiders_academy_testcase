@@ -11,7 +11,7 @@ query_string = """
     FROM books AS b
     JOIN publishers AS p on p.id = b.publisher_id
     WHERE
-        (b.year >= 2009 AND b.year <= 2019)
+        (b.year >= 2009 AND b.year <= 2018)
         AND
         (b.genre = 'tech' OR b.genre = 'cyberpunk');
 """
@@ -41,7 +41,7 @@ test_data.prepare_test_data_ponyorm(library)
 print('done.')
 
 print('Querying using SQLite library:\n')
-result = test_data.query_data_ponyorm(query_string)
+result = test_data.query_data_ponyorm()
 print(*result, sep='\n')
 print('\nDone.')
 
