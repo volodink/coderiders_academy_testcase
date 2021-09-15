@@ -23,8 +23,8 @@ def qsort(array):
 
     low, same, high = [], [], []
 
-    pivot = array[random.randint(0, len(array) - 1)]
-
+    pivot = random.choice(array)
+  
     for item in array:
         if item < pivot:
             low.append(item)
