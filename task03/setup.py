@@ -1,3 +1,7 @@
+"""
+      Coderiders Academy Task 3 library setup file configuration.
+"""
+
 from setuptools import setup, find_packages
 
 setup(name='coderiders_academy_testcase_3',

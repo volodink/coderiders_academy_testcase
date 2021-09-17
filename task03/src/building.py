@@ -1,3 +1,7 @@
+"""
+        Building entity class module.
+"""
+
 from typing import List
 
 from src.elevator import Elevator
@@ -5,6 +9,9 @@ from loguru import logger
 
 
 class Building:
+    """
+        Building entity class.
+    """
     def __init__(self, floor_count=9, elevator_count=3):
         logger.info("Building init.")
         self.__floor_count__ = floor_count
@@ -15,10 +22,22 @@ class Building:
             f"Building init done. The building has {self.__floor_count__} floors and {elevator_count} elevators.")
 
     def get_state(self) -> List[tuple]:
+        """
+            Essential elevator information.
+        Returns:
+            List of tuples like (id, floor), e.g. (0, 1).
+        """
         logger.info("Getting building state...")
         return [(elevator.get_id(), elevator.get_floor()) for elevator in self.__elevators__]
 
-    def call_elevator(self, user_floor: int):
+    def call_elevator(self, user_floor: int) -> int:
+        """
+            The elevator button click implementation.
+        Args:
+            user_floor: int  User floor now.
+        Returns:
+            Arrived elevator id.
+        """
         logger.opt(colors=True).info(f"User called elevator at <RED>{user_floor}</RED> floor.")
 
         # 0. Check wrong input
@@ -36,7 +55,7 @@ class Building:
             logger.opt(colors=True).info(f"Elevator <RED>{first_floor_elevator_id}</RED> available at 1st floor. Nice!")
         else:
             logger.opt(colors=True).info("There is no elevators on first floor...")
-            logger.info(f"Getting elevator, nearest to the 1st floor.")
+            logger.info("Getting elevator, nearest to the 1st floor.")
             first_floor_elevator_id = self.get_nearest_elevator_id(1)
             logger.opt(colors=True).info(
                 f"Sent elevator <RED>{first_floor_elevator_id}</RED> at 1st floor. Reason: no elevators on 1st floor")
@@ -69,13 +88,26 @@ class Building:
 
         return nearest_elevator_id
 
-    def __str__(self):
+    def __str__(self) -> str:
+        """
+            To string override method.
+        Returns:
+            String
+        """
         return f'Building(' \
                f'floor_count={self.__floor_count__}, ' \
                f'elevator_count={self.__elevator_count__}, ' \
                f'elevators_state={self.get_state()})'
 
-    def get_nearest_elevator_id(self, user_floor: int, exclude_ids=None):
+    def get_nearest_elevator_id(self, user_floor: int, exclude_ids=None) -> int:
+        """
+            Returns nearest elevator id by given user floor and optionally excluding particular elevators ids.
+        Args:
+            user_floor: User floor now.
+            exclude_ids: Elevator ids that must be excluded from search.
+        Returns:
+            Nearest elevator id.
+        """
         if exclude_ids is None:
             exclude_ids = []
 
@@ -98,12 +130,32 @@ class Building:
         return nearest_elevator_id
 
     def is_elevator_available(self, floor) -> tuple:
+        """
+            Checks if elevator available on a given floor.
+        Args:
+            floor: User floor now
+        Returns:
+            Tuple: True if available on floor and returns elevator id.
+                   OR
+                   False if not available on floor and returns None.
+        """
         for elevator in self.__elevators__:
             if elevator.get_floor() == floor:
                 return True, elevator.get_id()
         return False, None
 
     def move_elevator(self, elevator_id, floor):
+        """
+            Moves elevator (virtually)
+        Args:
+            elevator_id: Elevator id to move.
+            floor:  Elevator must be moved to this floor.
+
+        Returns:
+            None
+        Note:
+            Elevator actually teleports. Be careful.
+        """
         for elevator in self.__elevators__:
             if elevator.get_id() == elevator_id:
                 elevator.set_floor(floor)

@@ -1,8 +1,15 @@
+"""
+    Coderiders Academy Task 3 main application class.
+"""
+
 from src.building import Building
 from loguru import logger
 
 
 class Application:
+    """
+        Application class.
+    """
     def __init__(self) -> None:
         logger.info('Application.init')
         self.building = Building(floor_count=9, elevator_count=3)
@@ -10,6 +17,11 @@ class Application:
         logger.success('Application.init done.')
 
     def run(self) -> None:
+        """
+            Main application loop. Press X to win.
+        Returns:
+            None
+        """
         logger.info("Enter floor number or * for exit.")
 
         while True:

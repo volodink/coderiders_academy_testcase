@@ -1,0 +1,8 @@
+pycodestyle
+pylint
+flake8
+setuptools
+pytest
+loguru
+Faker
+pony

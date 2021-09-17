@@ -1,3 +1,7 @@
+"""
+    Coderiders Academy Task 3 implementation main file.
+"""
+
 import argparse
 from loguru import logger
 
@@ -5,6 +9,11 @@ from app import Application
 
 
 def main():
+    """
+        Implements main application functionality.
+    Returns:
+        None
+    """
     parser = argparse.ArgumentParser(description='code.riders academy test case 3. Elevators, elevators everywhere.')
     parser.add_argument('-v', action='store_true', help='Be more verbose.')
     args = vars(parser.parse_args())

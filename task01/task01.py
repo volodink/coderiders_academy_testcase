@@ -1,3 +1,7 @@
+"""
+    Coderiders Academy Task 1 implementation main file.
+"""
+
 import random
 import sort
 

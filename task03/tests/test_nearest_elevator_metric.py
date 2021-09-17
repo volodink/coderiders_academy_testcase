@@ -1,4 +1,3 @@
-from src import building
 from src.building import Building
 from src.elevator import Elevator
 
@@ -43,4 +42,3 @@ def test_unusual_building_elevators_state_is_correct():
     assert 0 == building.call_elevator(1)
     assert 1 == building.call_elevator(5)
     assert 1 == building.call_elevator(3)
-

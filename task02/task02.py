@@ -1,12 +1,15 @@
 # -*- coding: utf-8 -*-
+"""
+    Coderiders Academy Task 2 implementation main file.
+"""
+
 import os
-import sqlite3
 
 import test_data
 
 # -----------------------------------------------
 # Ответ на задание:
-query_string = """
+QUERY_STRING = """
     SELECT b.name, p.name
     FROM books AS b
     JOIN publishers AS p on p.id = b.publisher_id
@@ -26,7 +29,7 @@ test_data.prepare_test_data_sqlite(library)
 print('done.')
 
 print('Querying using SQLite library:\n')
-result = test_data.query_data_sqlite(query_string)
+result = test_data.query_data_sqlite(QUERY_STRING)
 print(*result, sep='\n')
 print('\nDone.')
 
